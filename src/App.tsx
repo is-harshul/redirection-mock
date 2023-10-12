@@ -1,4 +1,5 @@
 import './App.css'
+import { Button } from '@chakra-ui/react'
 
 function App() {
 
@@ -12,12 +13,8 @@ function App() {
         <h1>Billdesk Redirect</h1>
       </div>
       <div className="card">
-        <button onClick={() => redirect('failure')}>
-          Failure
-        </button>
-        <button onClick={() => redirect('success')} style={{marginLeft: 32}}>
-          Success
-        </button>
+        <Button colorScheme='red' onClick={() => redirect('failure')}>Reject Payment</Button>
+        <Button colorScheme='green' onClick={() => redirect('success')} style={{marginLeft: 32}}>Approve Payment</Button>
       </div>
     </>
   )
