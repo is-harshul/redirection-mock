@@ -12,10 +12,10 @@ function App() {
         <h1>Billdesk Redirect</h1>
       </div>
       <div className="card">
-        <button onClick={() => redirect('success')}>
+        <button onClick={() => redirect('failure')}>
           Failure
         </button>
-        <button onClick={() => redirect('failure')} style={{marginLeft: 32}}>
+        <button onClick={() => redirect('success')} style={{marginLeft: 32}}>
           Success
         </button>
       </div>
