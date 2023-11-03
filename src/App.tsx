@@ -1,16 +1,21 @@
+import { useState } from 'react';
 import './App.css'
-import { Button } from '@chakra-ui/react'
+import { Button, Input } from '@chakra-ui/react'
 
 function App() {
 
+  const [inputVal, setInputVal] = useState<string | null>(null);
+
   const redirect = (status: string) => {
-    window.location.href = `https://mf-local.smallcase.com/paymentRedirect?status=${status}`;
+    window.location.href = inputVal ?? `https://mf-local.smallcase.com/paymentRedirect?status=${status}`;
   }
 
   return (
     <>
       <div>
-        <h1>Billdesk Redirect</h1>
+        <h1>Redirection App</h1>
+        <p style={{marginTop: 32}}>You can redirect to custom URL (Cta won't matter as you will add query params in URL):</p>
+        <Input placeholder='https://site.com/paramname=value' onChange={(e) => setInputVal(e.target.value)} />
       </div>
       <div className="card">
         <Button colorScheme='red' onClick={() => redirect('failure')}>Reject Payment</Button>
