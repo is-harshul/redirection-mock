@@ -6,7 +6,7 @@ function App() {
 
   const [inputVal, setInputVal] = useState<string | null>(null);
 
-  const redirect = (status: string) => {
+  const redirect = (status?: string) => {
     window.location.href = inputVal ?? `https://mf-local.smallcase.com/paymentRedirect?status=${status}`;
   }
 
@@ -19,7 +19,7 @@ function App() {
       </div>
       <div className="card">
         {inputVal ? 
-          <Button colorScheme='green' onClick={() => window.location.href = inputVal}>Redirect to above URL</Button>
+          <Button colorScheme='green' onClick={() => redirect()}>Redirect to above URL</Button>
         : 
         <>
           <Button colorScheme='red' onClick={() => redirect('failure')}>Reject Payment</Button>
