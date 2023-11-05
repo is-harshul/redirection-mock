@@ -18,8 +18,14 @@ function App() {
         <Input placeholder='https://site.com/paramname=value' onChange={(e) => setInputVal(e.target.value)} />
       </div>
       <div className="card">
-        <Button colorScheme='red' onClick={() => redirect('failure')}>Reject Payment</Button>
-        <Button colorScheme='green' onClick={() => redirect('success')} style={{marginLeft: 32}}>Approve Payment</Button>
+        {inputVal ? 
+          <Button colorScheme='green' onClick={() => window.location.href = inputVal}>Redirect to above URL</Button>
+        : 
+        <>
+          <Button colorScheme='red' onClick={() => redirect('failure')}>Reject Payment</Button>
+          <Button colorScheme='green' onClick={() => redirect('success')} style={{marginLeft: 32}}>Approve Payment</Button>
+        </>
+        }
       </div>
     </>
   )
