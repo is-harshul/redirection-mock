@@ -7,7 +7,7 @@ function App() {
   const [inputVal, setInputVal] = useState<string | null>(null);
 
   const redirect = (status?: string) => {
-    window.location.href = inputVal ?? `https://mf-local.smallcase.com/paymentRedirect?status=${status}`;
+    window.location.href = inputVal ?? `https://mf-local.smallcase.com/payment-redirect?status=${status}`;
   }
 
   return (
